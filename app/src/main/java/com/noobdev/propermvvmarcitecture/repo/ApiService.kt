@@ -7,9 +7,6 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET("v2")
-    suspend fun getData(
-        @Query("limit") limit: Int,
-        @Query("offset") offset: Int,
-        ): ResponseNetworkEntity
+    suspend fun getData(@Query("limit") limit: Int, @Query("offset") offset: Int): ResponseNetworkEntity
 
 }

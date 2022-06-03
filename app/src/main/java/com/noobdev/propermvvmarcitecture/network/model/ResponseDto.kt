@@ -2,12 +2,12 @@ package com.noobdev.propermvvmarcitecture.network.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseNetworkEntity(
+data class ResponseDto(
 
 	@field:SerializedName("data")
 	val data: List<SerializedDataItem>? = null,
 
-	@SerializedName("timestamp")
+	@field:SerializedName("timestamp")
 	val timestamp: Long? = null
 )
 

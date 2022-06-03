@@ -2,18 +2,18 @@ package com.noobdev.propermvvmarcitecture.network.model
 
 import com.noobdev.propermvvmarcitecture.domain.model.DataItem
 import com.noobdev.propermvvmarcitecture.domain.model.DomainParsableResponse
-import com.noobdev.propermvvmarcitecture.domain.utils.EntityMapper
+import com.noobdev.propermvvmarcitecture.domain.utils.DomainMapper
 
-class NetworkMapper : EntityMapper<ResponseNetworkEntity, DomainParsableResponse> {
-    override fun mapFromEntity(entity: ResponseNetworkEntity): DomainParsableResponse {
+class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
+    override fun mapToDomainModel(entity: ResponseDto): DomainParsableResponse {
         return DomainParsableResponse(
             timestamp = entity.timestamp,
             data = entity.data?.let { mapFromEntityList(it) }
         )
     }
 
-    override fun mapToEntity(domainModel: DomainParsableResponse): ResponseNetworkEntity {
-        return ResponseNetworkEntity(
+    override fun mapFromDomainModel(domainModel: DomainParsableResponse): ResponseDto {
+        return ResponseDto(
             timestamp = domainModel.timestamp,
             data = domainModel.data?.let { mapToEntityList(it) }
         )
