@@ -14,13 +14,25 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
 import com.noobdev.propermvvmarcitecture.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    //it should not be private
+    @Inject //Field injection
+    lateinit var baseApplication: BassApplication
+
+    lateinit var base2: BassApplication
+
     private lateinit var binding: ActivityMainBinding
         private set
 
     private lateinit var navController: NavController
+
+    @Inject
+    lateinit var randomClass:DataCClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +43,22 @@ class MainActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
 
+
+//        baseApplication.sendRandom
+//
+//        APi{
+//
+//            randomClass.randomString
+//            randomClass.randomString="II"
+//        }
+//        APi2{
+//            randomClass.randomString
+//
+//        }
+
+
+
+        //base2.sendRandom//this will throw an error, cause never created
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.rootLayout) { rootLayout: View, windowInsets: WindowInsetsCompat ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())

@@ -3,16 +3,31 @@ package com.noobdev.propermvvmarcitecture.domain.model
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import java.time.Instant
+import java.util.*
 
+/**
+ *
+ * This is domain will convert the data from api to as we need and specific the values function.
+ * keep the value which are only need to the ui.
+ *
+ * */
+
+/**
+ * [SerializedName] it convert the data class(eg String) to byte stream and where we need it convert back to data class which is called [deserilization]
+ * [Parcelable] both are simillar but it is effecient according to android platform
+ * */
+
+//delete the serialized and parciable
 @Parcelize
 data class DomainParsableResponse(
 
-	@field:SerializedName("data")
 	val data: List<DataItem>? = null,
 
-	@field:SerializedName("timestamp")
-	val timestamp: Long? = null
+	val timestamp: Date? = null
 ) : Parcelable
+
+//
 
 @Parcelize
 data class DataItem(
@@ -20,11 +35,6 @@ data class DataItem(
 	@field:SerializedName("symbol")
 	val symbol: String? = null,
 
-	@field:SerializedName("volumeUsd24Hr")
-	val volumeUsd24Hr: String? = null,
-
-	@field:SerializedName("marketCapUsd")
-	val marketCapUsd: String? = null,
 
 	@field:SerializedName("priceUsd")
 	val priceUsd: String? = null,

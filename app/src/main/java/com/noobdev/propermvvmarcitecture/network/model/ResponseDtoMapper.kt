@@ -3,18 +3,20 @@ package com.noobdev.propermvvmarcitecture.network.model
 import com.noobdev.propermvvmarcitecture.domain.model.DataItem
 import com.noobdev.propermvvmarcitecture.domain.model.DomainParsableResponse
 import com.noobdev.propermvvmarcitecture.domain.utils.DomainMapper
+import java.util.*
+
 
 class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
     override fun mapToDomainModel(entity: ResponseDto): DomainParsableResponse {
         return DomainParsableResponse(
-            timestamp = entity.timestamp,
+            timestamp = entity.timestamp?.let { Date(it) },
             data = entity.data?.let { mapFromEntityList(it) }
         )
     }
 
     override fun mapFromDomainModel(domainModel: DomainParsableResponse): ResponseDto {
         return ResponseDto(
-            timestamp = domainModel.timestamp,
+            timestamp = domainModel.timestamp?.time,
             data = domainModel.data?.let { mapToEntityList(it) }
         )
     }
@@ -25,8 +27,6 @@ class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
             output.add(
                 DataItem(
                     symbol = item.symbol,
-                    volumeUsd24Hr = item.volumeUsd24Hr,
-                    marketCapUsd = item.marketCapUsd,
                     priceUsd = item.priceUsd,
                     vwap24Hr = item.vwap24Hr,
                     changePercent24Hr = item.changePercent24Hr,
@@ -63,8 +63,6 @@ class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
             output.add(
                 SerializedDataItem(
                     symbol = dataItem.symbol,
-                    volumeUsd24Hr = dataItem.volumeUsd24Hr,
-                    marketCapUsd = dataItem.marketCapUsd,
                     priceUsd = dataItem.priceUsd,
                     vwap24Hr = dataItem.vwap24Hr,
                     changePercent24Hr = dataItem.changePercent24Hr,

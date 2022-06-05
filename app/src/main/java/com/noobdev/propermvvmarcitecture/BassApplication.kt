@@ -11,5 +11,5 @@ import dagger.hilt.android.HiltAndroidApp
  * */
 @HiltAndroidApp
 class BassApplication: Application() {
-
+var sendRandom = "randomm"
 }

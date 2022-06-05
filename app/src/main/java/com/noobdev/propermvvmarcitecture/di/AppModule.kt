@@ -2,6 +2,7 @@ package com.noobdev.propermvvmarcitecture.di
 
 import android.content.Context
 import com.noobdev.propermvvmarcitecture.BassApplication
+import com.noobdev.propermvvmarcitecture.DataCClass
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +22,9 @@ import javax.inject.Singleton
 object AppModule {
 
     /**
+     * it basically tell us how create instance of class or object.
      * This will provide application context through out the app at any point of time and place.
+     * it is of two type: field injection and construcor injection
      * */
     @Singleton
     @Provides
@@ -33,6 +36,11 @@ object AppModule {
     @Provides
     fun provideRandomString():String{
         return "Random String"
+    }
+
+
+    fun provideDataCclass():DataCClass{
+        return DataCClass("")
     }
 
 }
