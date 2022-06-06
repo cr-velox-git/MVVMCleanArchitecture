@@ -26,16 +26,11 @@ class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
         input.forEach { item ->
             output.add(
                 DataItem(
-                    symbol = item.symbol,
                     priceUsd = item.priceUsd,
                     vwap24Hr = item.vwap24Hr,
                     changePercent24Hr = item.changePercent24Hr,
                     name = item.name,
-                    explorer = item.explorer,
-                    rank = item.rank,
                     id = item.id,
-                    maxSupply = item.maxSupply,
-                    supply = item.supply
                 )
             )
         }
@@ -62,16 +57,11 @@ class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
         input.forEach { dataItem ->
             output.add(
                 SerializedDataItem(
-                    symbol = dataItem.symbol,
                     priceUsd = dataItem.priceUsd,
                     vwap24Hr = dataItem.vwap24Hr,
                     changePercent24Hr = dataItem.changePercent24Hr,
                     name = dataItem.name,
-                    explorer = dataItem.explorer,
-                    rank = dataItem.rank,
-                    id = dataItem.id,
-                    maxSupply = dataItem.maxSupply,
-                    supply = dataItem.supply,
+                    id = dataItem.id
                 )
             )
         }

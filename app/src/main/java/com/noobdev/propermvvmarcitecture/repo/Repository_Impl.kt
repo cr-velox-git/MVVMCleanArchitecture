@@ -11,6 +11,4 @@ class Repository_Impl constructor(
         val  result = apiService.getData(0,0)
         return mapper.mapToDomainModel(result)
     }
-
-
 }
