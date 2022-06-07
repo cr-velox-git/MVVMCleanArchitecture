@@ -1,12 +1,12 @@
-package com.noobdev.propermvvmarcitecture
+package com.noobdev.propermvvmarcitecture.presentation.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
+import com.noobdev.propermvvmarcitecture.R
 import com.noobdev.propermvvmarcitecture.databinding.FragmentXmlBinding
-import com.noobdev.propermvvmarcitecture.presentation.ViewModelClass
+import com.noobdev.propermvvmarcitecture.presentation.ui.ViewModelClass
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

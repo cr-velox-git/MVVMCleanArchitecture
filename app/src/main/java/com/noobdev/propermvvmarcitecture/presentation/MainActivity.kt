@@ -1,4 +1,4 @@
-package com.noobdev.propermvvmarcitecture
+package com.noobdev.propermvvmarcitecture.presentation
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -11,13 +11,13 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
+import com.noobdev.propermvvmarcitecture.R
 import com.noobdev.propermvvmarcitecture.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-@AndroidEntryPoint
+
 class MainActivity : AppCompatActivity() {
 
     //it should not be private
@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
-    @Inject
-    lateinit var randomClass:DataCClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             }
             WindowInsetsCompat.CONSUMED
         }
-        navController = Navigation.findNavController(this,R.id.nav_host_fragment)
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
             binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
             menuItem.onNavDestinationSelected(navController)

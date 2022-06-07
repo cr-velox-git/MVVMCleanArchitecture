@@ -1,17 +1,15 @@
 package com.noobdev.propermvvmarcitecture.domain.usecase
 
-import com.noobdev.propermvvmarcitecture.domain.model.DomainParsableResponse
-import com.noobdev.propermvvmarcitecture.repo.Repository
-import io.reactivex.Single
+import com.noobdev.propermvvmarcitecture.domain.model.DomainResponse
+import com.noobdev.propermvvmarcitecture.repositories.Repository
 import javax.inject.Inject
 
 /**
- * We can call only one method
+ * We should call only one method (recommended)
  * */
 class GetDataUseCase  @Inject
     constructor(val apiRepo: Repository)  {
-    suspend operator fun invoke():DomainParsableResponse{
+    suspend operator fun invoke():DomainResponse{
        return apiRepo.getDataRepo(20,0)
     }
-
 }

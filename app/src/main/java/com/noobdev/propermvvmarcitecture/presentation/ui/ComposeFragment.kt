@@ -1,4 +1,4 @@
-package com.noobdev.propermvvmarcitecture
+package com.noobdev.propermvvmarcitecture.presentation.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,10 +23,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.noobdev.propermvvmarcitecture.presentation.ViewModelClass
+import com.noobdev.propermvvmarcitecture.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

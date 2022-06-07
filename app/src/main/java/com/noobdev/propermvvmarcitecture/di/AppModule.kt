@@ -1,8 +1,7 @@
 package com.noobdev.propermvvmarcitecture.di
 
 import android.content.Context
-import com.noobdev.propermvvmarcitecture.BassApplication
-import com.noobdev.propermvvmarcitecture.DataCClass
+import com.noobdev.propermvvmarcitecture.presentation.BassApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,7 +27,7 @@ object AppModule {
      * */
     @Singleton
     @Provides
-    fun provideApplication(@ApplicationContext app: Context): BassApplication{
+    fun provideApplication(@ApplicationContext app: Context): BassApplication {
         return  app as BassApplication
     }
 
@@ -39,9 +38,9 @@ object AppModule {
         return "Random String"
     }
 
-
-    fun provideDataCclass():DataCClass{
-        return DataCClass("")
-    }
+//
+//    fun provideDataCclass():DataCClass{
+//        return DataCClass("")
+//    }
 
 }

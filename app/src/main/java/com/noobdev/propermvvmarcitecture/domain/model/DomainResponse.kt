@@ -15,7 +15,7 @@ import java.util.*
 
 //delete the serialized and parciable
 
-data class DomainParsableResponse(
+data class DomainResponse(
 
 	val data: List<DataItem>? = null,
 

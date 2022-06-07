@@ -1,6 +1,6 @@
 package com.noobdev.propermvvmarcitecture.di
 
-import com.noobdev.propermvvmarcitecture.data.ApiService
+import com.noobdev.propermvvmarcitecture.network.ApiService
 import com.noobdev.propermvvmarcitecture.network.model.ResponseDtoMapper
 import dagger.Module
 import dagger.Provides
@@ -23,7 +23,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideResponseService():ApiService{
+    fun provideResponseService(): ApiService {
         return  Retrofit.Builder()
             .baseUrl("https://api.coincap.io/")
             .addConverterFactory(GsonConverterFactory.create())

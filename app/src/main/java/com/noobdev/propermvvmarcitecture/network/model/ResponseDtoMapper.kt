@@ -1,20 +1,20 @@
 package com.noobdev.propermvvmarcitecture.network.model
 
 import com.noobdev.propermvvmarcitecture.domain.model.DataItem
-import com.noobdev.propermvvmarcitecture.domain.model.DomainParsableResponse
+import com.noobdev.propermvvmarcitecture.domain.model.DomainResponse
 import com.noobdev.propermvvmarcitecture.domain.utils.DomainMapper
 import java.util.*
 
 
-class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
-    override fun mapToDomainModel(entity: ResponseDto): DomainParsableResponse {
-        return DomainParsableResponse(
+class ResponseDtoMapper : DomainMapper<ResponseDto, DomainResponse> {
+    override fun mapToDomainModel(entity: ResponseDto): DomainResponse {
+        return DomainResponse(
             timestamp = entity.timestamp?.let { Date(it) },
             data = entity.data?.let { mapFromEntityList(it) }
         )
     }
 
-    override fun mapFromDomainModel(domainModel: DomainParsableResponse): ResponseDto {
+    override fun mapFromDomainModel(domainModel: DomainResponse): ResponseDto {
         return ResponseDto(
             timestamp = domainModel.timestamp?.time,
             data = domainModel.data?.let { mapToEntityList(it) }

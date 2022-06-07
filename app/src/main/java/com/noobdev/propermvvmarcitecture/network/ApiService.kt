@@ -1,4 +1,4 @@
-package com.noobdev.propermvvmarcitecture.data
+package com.noobdev.propermvvmarcitecture.network
 
 import com.noobdev.propermvvmarcitecture.network.model.ResponseDto
 import retrofit2.http.GET
