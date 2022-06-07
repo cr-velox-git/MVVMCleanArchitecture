@@ -24,12 +24,9 @@ data class DomainParsableResponse(
 
 
 data class DataItem(
-
 	val priceUsd: String? = null,
 	val vwap24Hr: String? = null,
 	val changePercent24Hr: String? = null,
 	val name: String? = null,
 	val id: String? = null,
-
-
 )

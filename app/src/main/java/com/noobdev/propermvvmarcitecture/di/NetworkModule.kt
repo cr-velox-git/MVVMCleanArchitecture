@@ -1,18 +1,14 @@
 package com.noobdev.propermvvmarcitecture.di
 
-import android.app.Application
 import com.noobdev.propermvvmarcitecture.data.ApiService
 import com.noobdev.propermvvmarcitecture.network.model.ResponseDtoMapper
-import com.noobdev.propermvvmarcitecture.repo.RetrofitService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.internal.managers.ApplicationComponentManager
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module

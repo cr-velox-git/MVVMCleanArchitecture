@@ -32,6 +32,7 @@ object AppModule {
         return  app as BassApplication
     }
 
+
     @Singleton
     @Provides
     fun provideRandomString():String{

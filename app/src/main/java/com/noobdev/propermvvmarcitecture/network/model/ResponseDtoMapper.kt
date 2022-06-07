@@ -34,22 +34,7 @@ class ResponseDtoMapper : DomainMapper<ResponseDto, DomainParsableResponse> {
                 )
             )
         }
-
         return output.toList()
-//         return DataItem(
-//            symbol = initial.symbol,
-//            volumeUsd24Hr = entity.volumeUsd24Hr,
-//            marketCapUsd = entity.marketCapUsd,
-//            priceUsd = entity.priceUsd,
-//            vwap24Hr = entity.vwap24Hr,
-//            changePercent24Hr = entity.changePercent24Hr,
-//            name = entity.name,
-//            explorer = entity.explorer,
-//            rank = entity.rank,
-//            id = entity.id,
-//            maxSupply = entity.maxSupply,
-//            supply = entity.supply
-//        )
     }
 
     private fun mapToEntityList(input: List<DataItem>): List<SerializedDataItem> {
