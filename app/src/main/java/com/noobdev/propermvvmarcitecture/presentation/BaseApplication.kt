@@ -10,6 +10,6 @@ import dagger.hilt.android.HiltAndroidApp
  * Hilt will create all the required components.
  * */
 @HiltAndroidApp
-class BassApplication: Application() {
-var sendRandom = "randomm"
+class BaseApplication: Application() {
+
 }

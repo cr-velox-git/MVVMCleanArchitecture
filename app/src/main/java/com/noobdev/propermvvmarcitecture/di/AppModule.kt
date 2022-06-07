@@ -1,7 +1,7 @@
 package com.noobdev.propermvvmarcitecture.di
 
 import android.content.Context
-import com.noobdev.propermvvmarcitecture.presentation.BassApplication
+import com.noobdev.propermvvmarcitecture.presentation.BaseApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,8 +27,8 @@ object AppModule {
      * */
     @Singleton
     @Provides
-    fun provideApplication(@ApplicationContext app: Context): BassApplication {
-        return  app as BassApplication
+    fun provideApplication(@ApplicationContext app: Context): BaseApplication {
+        return  app as BaseApplication
     }
 
 
