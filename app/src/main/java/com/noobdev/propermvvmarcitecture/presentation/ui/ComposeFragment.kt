@@ -18,7 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
@@ -26,6 +25,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.noobdev.propermvvmarcitecture.R
+import com.noobdev.propermvvmarcitecture.domain.model.DataItem
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -52,22 +52,29 @@ class ComposeFragment : Fragment() {
             // Dispose of the Composition when the view's LifecycleOwner
             // is destroyed
             val data = viewModel.response.value
-            data?.data
+
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
-                Compose()
+                data?.data?.let {
+                    MainCompose(
+                        title = "Compose Fragment",
+                        dataItemList = it
+                    )
+                }
             }
         }
     }
 
-    @Preview
-    @Composable
-    fun Compose() {
-        MainCompose(title = "Compose Fragment")
-    }
+//    @Preview
+//    @Composable
+//    fun Compose(dataItemList:List<DataItem>) {
+//        MainCompose(title = "Compose Fragment",
+//            dataItemList = dataItemList
+//        )
+//    }
 
     @Composable
-    fun MainCompose(title: String) {
+    fun MainCompose(title: String, dataItemList: List<DataItem>) {
         val (value, updateValue) = remember { mutableStateOf("") }
         //get context
         Column(
@@ -97,9 +104,18 @@ class ComposeFragment : Fragment() {
             )
 
             ListItem("#", "Name", "24h", "Price")
+
             LazyColumn(modifier = Modifier.fillMaxWidth()) {
-                items(3) { v: Int ->
-                    ListItem(v.toString(), "Name", "24h", "Price")
+//                items(3) { v: Int ->
+//                    ListItem(v.toString(), "Name", "24h", "Price")
+//                }
+                items(dataItemList.size) { d: Int ->
+                    ListItem(
+                        (d + 1).toString(),
+                        dataItemList[d].name.toString(),
+                       dataItemList[d].changePercent24Hr.toString(),
+                        dataItemList[d].priceUsd.toString()
+                    )
                 }
             }
         }

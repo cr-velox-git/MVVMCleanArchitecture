@@ -14,7 +14,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class XmlFragment : Fragment(R.layout.fragment_xml) {
 
-    private val TAG = "XmlFragment"
+    private val TAG = "XmlFragment "
     private val viewModel: ViewModelClass by activityViewModels()
 
     private var binding: FragmentXmlBinding? = null
@@ -24,6 +24,7 @@ class XmlFragment : Fragment(R.layout.fragment_xml) {
         binding = FragmentXmlBinding.bind(view)
 
         val response = viewModel.response.value
-        Log.d(TAG, response?.data.toString())
+        Log.d(TAG, response.toString())
+        Log.d(TAG, response?.data?.get(1)?.name.toString())
     }
 }

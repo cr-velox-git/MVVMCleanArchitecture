@@ -12,7 +12,7 @@ class RepositoryImpl @Inject constructor(
 ) : Repository{
 
     override suspend fun get(limit: Int, offset: Int): DomainResponse {
-        val  result = apiService.getData(0,0)
+        val  result = apiService.getData(20,0)
         return mapper.mapToDomainModel(result)
     }
 }
