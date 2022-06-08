@@ -15,9 +15,7 @@ import java.util.*
 //delete the serialized and parciable
 
 data class DomainResponse(
-
 	val data: List<DataItem>? = null,
-
 	val timestamp: Date? = null
 )
 
