@@ -14,9 +14,10 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.onNavDestinationSelected
 import com.noobdev.propermvvmarcitecture.R
 import com.noobdev.propermvvmarcitecture.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     //it should not be private

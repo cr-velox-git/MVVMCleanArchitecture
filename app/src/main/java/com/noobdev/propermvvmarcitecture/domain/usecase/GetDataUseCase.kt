@@ -10,6 +10,6 @@ import javax.inject.Inject
 class GetDataUseCase  @Inject
     constructor(val apiRepo: Repository)  {
     suspend operator fun invoke():DomainResponse{
-       return apiRepo.getDataRepo(20,0)
+       return apiRepo.get(20,0)
     }
 }
