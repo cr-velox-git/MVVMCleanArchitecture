@@ -27,7 +27,9 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.noobdev.propermvvmarcitecture.R
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @AndroidEntryPoint
 class ComposeFragment : Fragment() {
 
@@ -49,6 +51,8 @@ class ComposeFragment : Fragment() {
         return ComposeView(requireContext()).apply {
             // Dispose of the Composition when the view's LifecycleOwner
             // is destroyed
+            val data = viewModel.response.value
+            data?.data
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
                 Compose()
@@ -64,9 +68,7 @@ class ComposeFragment : Fragment() {
 
     @Composable
     fun MainCompose(title: String) {
-
-        var (value, updateValue) = remember { mutableStateOf("") }
-
+        val (value, updateValue) = remember { mutableStateOf("") }
         //get context
         Column(
             modifier = Modifier
@@ -112,9 +114,9 @@ class ComposeFragment : Fragment() {
 //domain       // buisness model
 //entity       // data transfer object model
 //viewdata     // view data model(show on screen)
-//
+
 //viewModel    //(from view to domin and vise versa and api call)
-//
+
 //usecase      //(it takes data from repositries and give it to view model and vise versa)
 //repositries
 //dataSource   //(local(room db, share preferance)/remote(api calls))

@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.noobdev.propermvvmarcitecture">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
-        android:name=".presentation.BaseApplication"
+        android:name="com.noobdev.propermvvmarcitecture.presentation.BaseApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

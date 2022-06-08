@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.noobdev.propermvvmarcitecture.R
 import com.noobdev.propermvvmarcitecture.databinding.FragmentMainBinding
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 
 class MainFragment : Fragment(R.layout.fragment_main) {
