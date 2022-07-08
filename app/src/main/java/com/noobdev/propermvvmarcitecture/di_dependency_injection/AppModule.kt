@@ -1,7 +1,7 @@
-package com.noobdev.propermvvmarcitecture.di
+package com.noobdev.propermvvmarcitecture.di_dependency_injection
 
 import android.content.Context
-import com.noobdev.propermvvmarcitecture.presentation.BaseApplication
+import com.noobdev.propermvvmarcitecture.BaseApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

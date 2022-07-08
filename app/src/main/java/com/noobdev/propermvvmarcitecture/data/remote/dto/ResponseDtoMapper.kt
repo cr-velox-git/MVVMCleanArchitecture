@@ -1,10 +1,13 @@
-package com.noobdev.propermvvmarcitecture.network.model
+package com.noobdev.propermvvmarcitecture.data.remote.dto
 
 import com.noobdev.propermvvmarcitecture.domain.model.DataItem
 import com.noobdev.propermvvmarcitecture.domain.model.DomainResponse
 import com.noobdev.propermvvmarcitecture.domain.utils.DomainMapper
 import java.util.*
 
+/**
+ * here the entity or dto objects are converted to domain model and vise-versa.
+ * */
 
 class ResponseDtoMapper : DomainMapper<ResponseDto, DomainResponse> {
     override fun mapToDomainModel(entity: ResponseDto): DomainResponse {

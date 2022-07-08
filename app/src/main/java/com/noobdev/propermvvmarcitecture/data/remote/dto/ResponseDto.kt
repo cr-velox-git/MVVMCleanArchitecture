@@ -1,13 +1,13 @@
-package com.noobdev.propermvvmarcitecture.network.model
+package com.noobdev.propermvvmarcitecture.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 
 data class ResponseDto(
 
-	@field:SerializedName("data")
+    @field:SerializedName("data")
 	val data: List<SerializedDataItem>? = null,
 
-	@field:SerializedName("timestamp")
+    @field:SerializedName("timestamp")
 	val timestamp: Long? = null
 )
 

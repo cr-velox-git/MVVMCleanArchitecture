@@ -1,1 +1,1 @@
-# MVVMCleanArcitecture
+# MVVMCleanArchitecture
