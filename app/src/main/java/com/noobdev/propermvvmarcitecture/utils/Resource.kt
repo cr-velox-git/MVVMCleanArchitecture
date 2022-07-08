@@ -13,4 +13,7 @@ sealed class Resource<T>(val data: T? = null,val message: UiErrorText? = null) {
      * to fetch data from api, we still have data from the local data base like from RoomDB or chase data.
      * **/
     class Error<T>(message:UiErrorText,data:T? = null):Resource<T>(data, message)
+
+    class Loading<T>(val isLoading: Boolean):Resource<T>(null)
+
 }
