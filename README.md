@@ -1,7 +1,8 @@
-# MVVMCleanArchitecture
+# CleanArchitecture & Api Error Handelling
 
 
-<img width="700" alt="clean-arhitecture-2x" src="https://user-images.githubusercontent.com/48889698/177992047-6cf52399-fb27-45a1-8b2a-5deb7fa95577.png">
+<img width="200" height="200" alt="clean-arhitecture-2x" src="https://user-images.githubusercontent.com/48889698/177992047-6cf52399-fb27-45a1-8b2a-5deb7fa95577.png">
+
 
 
 //domain       // buisness model
