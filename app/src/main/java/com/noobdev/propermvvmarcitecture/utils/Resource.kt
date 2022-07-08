@@ -1,5 +1,9 @@
 package com.noobdev.propermvvmarcitecture.utils
 
+
+/**
+ * Resource.kt handle the api response status
+ * **/
 sealed class Resource<T>(val data: T? = null,val message: UiErrorText? = null) {
 
     class Success<T>(data:T?): Resource<T>(data)

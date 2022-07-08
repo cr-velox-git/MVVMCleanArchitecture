@@ -20,7 +20,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 class ComposeFragment : Fragment() {
 
 
-    val viewModel: ViewModelClass by activityViewModels()
+    private val viewModel: ViewModelClass by activityViewModels()
 
     private val navController: NavController by lazy {
         Navigation.findNavController(

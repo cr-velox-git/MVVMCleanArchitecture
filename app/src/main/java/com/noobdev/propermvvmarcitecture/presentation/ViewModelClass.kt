@@ -1,5 +1,6 @@
 package com.noobdev.propermvvmarcitecture.presentation
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -35,14 +36,19 @@ constructor(
 
 
     init {
+        Log.d("ViewModel","view model initiated")
         viewModelScope.launch {
             val response = getDataUseCase.invoke("random no use value just to get error in UiErrorText")
             when (response) {
                 is Resource.Success -> {
                     _response.value = response.data
+                    Log.d("ViewModel","data response success")
                 }
                 is Resource.Error -> {
                     error = response.message
+                    Log.d("ViewModel","data response failed")
+                    Log.d("ViewModel",error.toString())
+
                 }
             }
         }
