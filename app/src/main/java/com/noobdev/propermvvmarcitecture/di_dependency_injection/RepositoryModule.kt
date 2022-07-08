@@ -1,9 +1,9 @@
-package com.noobdev.propermvvmarcitecture.di
+package com.noobdev.propermvvmarcitecture.di_dependency_injection
 
-import com.noobdev.propermvvmarcitecture.network.ApiService
-import com.noobdev.propermvvmarcitecture.network.model.ResponseDtoMapper
-import com.noobdev.propermvvmarcitecture.repositories.Repository
-import com.noobdev.propermvvmarcitecture.repositories.RepositoryImpl
+import com.noobdev.propermvvmarcitecture.data.remote.ApiService
+import com.noobdev.propermvvmarcitecture.data.remote.dto.ResponseDtoMapper
+import com.noobdev.propermvvmarcitecture.domain.repositories.Repository
+import com.noobdev.propermvvmarcitecture.data.repositories.RepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

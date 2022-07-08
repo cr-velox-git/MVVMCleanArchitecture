@@ -1,4 +1,4 @@
-package com.noobdev.propermvvmarcitecture.presentation
+package com.noobdev.propermvvmarcitecture
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -12,7 +12,6 @@ import androidx.core.view.updateLayoutParams
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.onNavDestinationSelected
-import com.noobdev.propermvvmarcitecture.R
 import com.noobdev.propermvvmarcitecture.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

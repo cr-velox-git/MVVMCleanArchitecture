@@ -1,7 +1,7 @@
-package com.noobdev.propermvvmarcitecture.di
+package com.noobdev.propermvvmarcitecture.di_dependency_injection
 
-import com.noobdev.propermvvmarcitecture.network.ApiService
-import com.noobdev.propermvvmarcitecture.network.model.ResponseDtoMapper
+import com.noobdev.propermvvmarcitecture.data.remote.ApiService
+import com.noobdev.propermvvmarcitecture.data.remote.dto.ResponseDtoMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,13 +11,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import javax.inject.Singleton
 
+
+
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideResponseMapper():ResponseDtoMapper{
+    fun provideResponseMapper(): ResponseDtoMapper {
         return ResponseDtoMapper()
     }
 

@@ -1,6 +1,6 @@
-package com.noobdev.propermvvmarcitecture.network
+package com.noobdev.propermvvmarcitecture.data.remote
 
-import com.noobdev.propermvvmarcitecture.network.model.ResponseDto
+import com.noobdev.propermvvmarcitecture.data.remote.dto.ResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -1,4 +1,4 @@
-package com.noobdev.propermvvmarcitecture.presentation
+package com.noobdev.propermvvmarcitecture
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

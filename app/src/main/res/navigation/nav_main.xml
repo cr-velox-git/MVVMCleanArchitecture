@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.noobdev.propermvvmarcitecture.presentation.ui.MainFragment"
+        android:name="com.noobdev.propermvvmarcitecture.ui.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/xmlFragment"
-        android:name="com.noobdev.propermvvmarcitecture.presentation.ui.XmlFragment"
+        android:name="com.noobdev.propermvvmarcitecture.ui.XmlFragment"
         android:label="fragment_crypto"
         tools:layout="@layout/fragment_xml" >
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/composeFragment"
-        android:name="com.noobdev.propermvvmarcitecture.presentation.ui.ComposeFragment"
+        android:name="com.noobdev.propermvvmarcitecture.ui.ComposeFragment"
         android:label="fragment_compose"
          >
 

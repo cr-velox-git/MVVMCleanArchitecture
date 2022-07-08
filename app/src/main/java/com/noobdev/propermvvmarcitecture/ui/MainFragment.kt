@@ -1,4 +1,4 @@
-package com.noobdev.propermvvmarcitecture.presentation.ui
+package com.noobdev.propermvvmarcitecture.ui
 
 import android.os.Bundle
 import android.view.View
