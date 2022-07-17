@@ -59,7 +59,6 @@ class RepositoryImpl @Inject constructor(
             //val response = apiService.getDataFromApiService(20, 0)
             try {
                 val response = apiService.getDataFromApiService(limit, offset)
-
                 emit(Resource.Success(mapper.mapToDomainModel(response)))
             } catch (e: IOException) {
                 emit(Resource.Error(UiErrorText.DynamicString(e.message.toString())))

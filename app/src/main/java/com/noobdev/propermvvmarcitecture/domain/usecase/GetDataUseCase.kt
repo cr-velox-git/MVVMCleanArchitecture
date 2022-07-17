@@ -5,7 +5,9 @@ import com.noobdev.propermvvmarcitecture.domain.model.DomainResponse
 import com.noobdev.propermvvmarcitecture.domain.repositories.Repository
 import com.noobdev.propermvvmarcitecture.utils.Resource
 import com.noobdev.propermvvmarcitecture.utils.UiErrorText
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 /**
@@ -16,14 +18,12 @@ class GetDataUseCase @Inject
 constructor(
     private val repository: Repository
 ) {
-    suspend operator fun invoke(limit: Int, offset: Int): Resource<DomainResponse> {
+    suspend operator fun invoke(limit: Int, offset: Int): Flow<Resource<DomainResponse>> {
         if (limit == 0 || offset == 0) {
-            return Resource.Error(UiErrorText.StringResource(R.string.empty))
-        }
-        return repository.getFromRepository(limit, offset).collect { result ->
-            when(result){
-                is Resource.Success-> null
+            return flow {
+                emit(Resource.Error(UiErrorText.StringResource(R.string.empty)))
             }
         }
+        return repository.getFromRepository(limit, offset)
     }
 }

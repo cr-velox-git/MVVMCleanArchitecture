@@ -46,6 +46,7 @@ class ComposeFragment : Fragment() {
                         title = "Compose Fragment",
                         dataItemList = it
                     )
+
                 }
             }
         }

@@ -14,6 +14,7 @@ import com.noobdev.propermvvmarcitecture.utils.Resource
 import com.noobdev.propermvvmarcitecture.utils.UiErrorText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -26,11 +27,10 @@ constructor(
 ) : ViewModel() {
 
     private val _response: MutableLiveData<DomainResponse> = MutableLiveData()
-    val response: LiveData<DomainResponse> get() = _response
+    val response: LiveData<DomainResponse> get() = _response // this is life cycle aware
 
 //    private val _error:MutableLiveData<String> = MutableLiveData()
 //    val error: LiveData<String> get() = _error
-
     var error by mutableStateOf<UiErrorText?>(null)
         private set
 
@@ -38,19 +38,25 @@ constructor(
     init {
         Log.d("ViewModel","view model initiated")
         viewModelScope.launch {
-            val response = getDataUseCase.invoke("random no use value just to get error in UiErrorText")
-            when (response) {
-                is Resource.Success -> {
-                    _response.value = response.data
-                    Log.d("ViewModel","data response success")
-                }
-                is Resource.Error -> {
-                    error = response.message
-                    Log.d("ViewModel","data response failed")
-                    Log.d("ViewModel",error.toString())
+            val response = getDataUseCase.invoke(20,1)
+            response.collectLatest {
+                when (it) {
+                    is Resource.Loading -> {
+                        //todo show loading
+                    }
+                    is Resource.Success -> {
+                        _response.value = it.data
+                        Log.d("ViewModel","data response success")
+                    }
+                    is Resource.Error -> {
+                        error = it.message
+                        Log.d("ViewModel","data response failed")
+                        Log.d("ViewModel",error.toString())
 
+                    }
                 }
             }
+
         }
     }
 }
